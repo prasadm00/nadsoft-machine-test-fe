@@ -54,6 +54,7 @@ const StudentList = ({ onEdit }) => {
           await deleteStudent(id);
           Swal.fire('Deleted!', 'Student has been deleted.', 'success');
           setPage(1);
+          fetchStudents()
         } catch (error) {
           Swal.fire(
             'Error',
