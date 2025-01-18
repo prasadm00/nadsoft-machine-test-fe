@@ -46,6 +46,15 @@ const StudentForm = ({ onSubmit, fetchStudents, initialData = {} }) => {
     });
   };
 
+  const handleClear = () => {
+    setFormData({
+      name: '',
+      email: '',
+      date_of_birth: '',
+      marks: [],
+    });
+  };
+
   const handleRemoveMark = (index) => {
     const newMarks = formData.marks.filter((_, i) => i !== index);
     setFormData({ ...formData, marks: newMarks });
@@ -156,6 +165,9 @@ const StudentForm = ({ onSubmit, fetchStudents, initialData = {} }) => {
 
       <button type="submit" className="btn btn-primary">
         Submit
+      </button>
+      <button type="button" onClick={handleClear} className="btn btn-secondary">
+        Clear
       </button>
     </form>
   );
